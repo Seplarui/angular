@@ -24,12 +24,12 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                     this.titulo = "Películas con Angular 2";
                     this.pelicula = "Batman vs Superman";
                     this.director = "Zack Scheider";
-                    this.anyo = "2016";
+                    this.anyo = 2016;
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: "my-app",
-                        template: "<h1>{{titulo}}\n    <ul>\n    <li>T\u00EDtulo: {{pelicula}}</li>\n    <li>Director: {{director}}</li>\n    <li>A\u00F1o: {{anyo}}</li>\n    \n    </ul>\n"
+                        templateUrl: "app/view/peliculas.html"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
