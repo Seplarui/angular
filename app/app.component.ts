@@ -1,4 +1,5 @@
 import { Component } from "angular2/core";
+import {Pelicula} from "./model/pelicula";
 
 @Component({
 
@@ -10,19 +11,16 @@ export class AppComponent{
     //PROPIEDADES
 
     public titulo:string="Películas con Angular 2";
-    public pelicula:string;
-    public director:string;
-    public anyo:number;
-
+    public pelicula:Pelicula;
+   
     constructor() {
 
-        this.pelicula="Batman vs Superman";
-        this. director="Zack Scheider";
-        this.anyo=2016;
-        //this.holaMundo();
+       this.pelicula=new Pelicula(1, "Batman vs Superman", "Zack Sneider", 2016);
+       this.debug();
+    
     }
 
-    holaMundo() {
-        alert("Película: "+this.pelicula+ " - " + this.director + " - " + this.anyo);
-    } 
+    debug() {
+        console.log(this.pelicula);
+    }
 }
