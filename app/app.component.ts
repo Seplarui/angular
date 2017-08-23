@@ -24,9 +24,13 @@ export class AppComponent{
     
     }
 
-
-
     debug() {
         console.log(this.pelicula);
     }
+
+    onShowHide(value) {
+        this.mostrarDatos=value;
+    }
+
+    
 }
