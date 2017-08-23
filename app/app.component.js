@@ -25,6 +25,7 @@ System.register(["angular2/core", "./model/pelicula"], function(exports_1, conte
                 function AppComponent() {
                     //PROPIEDADES
                     this.titulo = "Películas con Angular 2";
+                    this.mostrarDatos = false;
                     this.pelicula = new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Sneider", 2016);
                     this.debug();
                 }
