@@ -4,7 +4,8 @@ import {Pelicula} from "./model/pelicula";
 @Component({
 
     selector: "my-app",
-    templateUrl:"app/view/peliculas.html"
+    templateUrl:"app/view/peliculas.html",
+    styleUrls:["../assets/css/styles.css"]
 })
 
 export class AppComponent{
