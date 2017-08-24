@@ -1,6 +1,9 @@
-<p>PELICULAS LIST COMPONENT</p>
+<p>{{datoServicio}}</p>
+
 
 <p>Película Favorita</p>
+
+
 
 <button (click)="onShowHide(true)" [class.showingData]="mostrarDatos ===true">Mostrar Datos</button>
 <button (click)="onShowHide(false)" [class.showingData]="mostrarDatos ===false">Ocultar Datos</button>
@@ -12,7 +15,7 @@
 
 <p>
     Cambiar título:
-<input type="text" (keypress)="debug(true)" [(ngModel)]="pelicula.titulo">
+    <input type="text" (keypress)="debug(true)" [(ngModel)]="pelicula.titulo">
 
 </p>
 
@@ -22,8 +25,8 @@
 
 <ul>
     <ul *ngFor="#pelicula of peliculas" style="margin-bottom: 20px">
-    <li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.id===pelicula.id">Título: <strong>{{pelicula.titulo}}</strong></li>
-    <li>Director: <strong>{{pelicula.director}}</strong></li>
-    <li *ngIf="pelicula.anio">Año: <strong>{{pelicula.anio}}</strong></li>
-</ul>
+        <li (click)="onCambiarPelicula(pelicula)" class="pelicula-title" [class.clicked]="peliculaElegida.id===pelicula.id">Título: <strong>{{pelicula.titulo}}</strong></li>
+        <li>Director: <strong>{{pelicula.director}}</strong></li>
+        <li *ngIf="pelicula.anio">Año: <strong>{{pelicula.anio}}</strong></li>
+    </ul>
 </ul>
