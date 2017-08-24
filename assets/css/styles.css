@@ -7,3 +7,15 @@ h1 {
 .showingData {
     display: none;
 }
+
+.pelicula-title:hover {
+
+    text-decoration: underline;
+
+}
+
+.clicked {
+    font-size: 30px;
+    color:green;
+    font-family: Arial, Helvetica, sans-serif;
+}

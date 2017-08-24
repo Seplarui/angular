@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./model/pelicula"], function(exports_1, context_1) {
+System.register(["angular2/core", './components/peliculas-list.component', './components/peliculas-footer.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,49 +10,30 @@ System.register(["angular2/core", "./model/pelicula"], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, pelicula_1;
+    var core_1, peliculas_list_component_1, peliculas_footer_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (pelicula_1_1) {
-                pelicula_1 = pelicula_1_1;
+            function (peliculas_list_component_1_1) {
+                peliculas_list_component_1 = peliculas_list_component_1_1;
+            },
+            function (peliculas_footer_component_1_1) {
+                peliculas_footer_component_1 = peliculas_footer_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                     //PROPIEDADES
                     this.titulo = "Películas con Angular 2";
-                    this.mostrarDatos = false;
-                    this.pelicula = new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Sneider", 2016);
-                    this.peliculas = [
-                        new pelicula_1.Pelicula(1, "Batman vs Superman", "Zack Sneider", 2016),
-                        new pelicula_1.Pelicula(2, "La Verdad Duele", "Zack Sneider", 2006),
-                        new pelicula_1.Pelicula(3, "El señor de los anillos", "Desconocido", 2002),
-                        new pelicula_1.Pelicula(4, "Una Historia Real", "El de supersalidos", 2013),
-                        new pelicula_1.Pelicula(5, "Don Jon", "Josep Gordon Levit", 2003)
-                    ];
-                    this.debug();
                 }
-                AppComponent.prototype.debug = function (titulo) {
-                    if (titulo === void 0) { titulo = null; }
-                    if (titulo != null) {
-                        console.log(this.pelicula.titulo);
-                    }
-                    else {
-                        console.log(this.pelicula);
-                    }
-                };
-                AppComponent.prototype.onShowHide = function (value) {
-                    this.mostrarDatos = value;
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: "my-app",
                         templateUrl: "app/view/peliculas.html",
-                        styleUrls: ["../assets/css/styles.css"]
+                        directives: [peliculas_list_component_1.PeliculasListComponent, peliculas_footer_component_1.PeliculasFooterComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
