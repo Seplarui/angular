@@ -1,4 +1,4 @@
-System.register(["angular2/core", './mock.peliculas'], function(exports_1, context_1) {
+System.register(["angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,34 +10,30 @@ System.register(["angular2/core", './mock.peliculas'], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mock_peliculas_1;
-    var PeliculasService;
+    var core_1;
+    var ContactoComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (mock_peliculas_1_1) {
-                mock_peliculas_1 = mock_peliculas_1_1;
             }],
         execute: function() {
-            PeliculasService = (function () {
-                function PeliculasService() {
+            ContactoComponent = (function () {
+                function ContactoComponent() {
+                    //PROPIEDADES
+                    this.titulo = "Contacto";
                 }
-                PeliculasService.prototype.getPeliculas = function () {
-                    return mock_peliculas_1.PELICULAS;
-                };
-                PeliculasService.prototype.insertPelicula = function (pelicula) {
-                    Promise.resolve(mock_peliculas_1.PELICULAS).then(function (peliculas) { return peliculas.push(pelicula); });
-                };
-                PeliculasService = __decorate([
-                    core_1.Injectable(), 
+                ContactoComponent = __decorate([
+                    core_1.Component({
+                        selector: "contacto",
+                        templateUrl: "app/view/contacto.html",
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], PeliculasService);
-                return PeliculasService;
+                ], ContactoComponent);
+                return ContactoComponent;
             }());
-            exports_1("PeliculasService", PeliculasService);
+            exports_1("ContactoComponent", ContactoComponent);
         }
     }
 });
-//# sourceMappingURL=peliculas.service.js.map
+//# sourceMappingURL=nuevo.component.js.map
