@@ -1,6 +1,8 @@
 import { Component } from 'angular2/core';
 import { Pelicula } from '../model/pelicula';
 import { PeliculasService } from '../services/peliculas.service';
+import { ROUTER_DIRECTIVES, RouteConfig, Router } from "angular2/router";
+
 
 @Component({
 

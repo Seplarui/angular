@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../model/pelicula", "angular2/router", "../services/peliculas.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "../model/pelicula", "../services/peliculas.service", "angular2/router"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../model/pelicula", "angular2/router", "../se
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, pelicula_1, router_1, peliculas_service_1;
+    var core_1, pelicula_1, peliculas_service_1, router_1;
     var CrearPeliculaComponent;
     return {
         setters:[
@@ -20,30 +20,36 @@ System.register(["angular2/core", "../model/pelicula", "angular2/router", "../se
             function (pelicula_1_1) {
                 pelicula_1 = pelicula_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
             function (peliculas_service_1_1) {
                 peliculas_service_1 = peliculas_service_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             CrearPeliculaComponent = (function () {
                 //METODO
-                function CrearPeliculaComponent(_peliculasService, _router) {
+                function CrearPeliculaComponent(_peliculasService, _router, _routeParams) {
                     this._peliculasService = _peliculasService;
                     this._router = _router;
+                    this._routeParams = _routeParams;
+                    this.TituloPelicula = "";
                 }
                 CrearPeliculaComponent.prototype.onCrearPelicula = function (titulo, director, anio) {
                     var pelicula = new pelicula_1.Pelicula(77, titulo, director, anio);
                     this._peliculasService.insertPelicula(pelicula);
                     this._router.navigate(["Peliculas"]);
                 };
+                CrearPeliculaComponent.prototype.ngOnInit = function () {
+                    this.TituloPelicula = this._routeParams.get("titulo");
+                };
                 CrearPeliculaComponent = __decorate([
                     core_1.Component({
                         templateUrl: "app/view/crear-pelicula.html",
-                        providers: [peliculas_service_1.PeliculasService]
+                        providers: [peliculas_service_1.PeliculasService],
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [peliculas_service_1.PeliculasService, router_1.Router])
+                    __metadata('design:paramtypes', [peliculas_service_1.PeliculasService, router_1.Router, router_1.RouteParams])
                 ], CrearPeliculaComponent);
                 return CrearPeliculaComponent;
             }());
