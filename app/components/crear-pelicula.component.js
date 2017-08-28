@@ -41,7 +41,7 @@ System.register(["angular2/core", "../model/pelicula", "../services/peliculas.se
                 };
                 CrearPeliculaComponent.prototype.ngOnInit = function () {
                     this.TituloPelicula = this._routeParams.get("titulo");
-                    this.nuevaPelicula = new pelicula_1.Pelicula(0, this._routeParams.get("titulo"), this._routeParams.get("titulo"), this._routeParams.get("anio"));
+                    this.nuevaPelicula = new pelicula_1.Pelicula(0, this._routeParams.get("titulo"), this._routeParams.get("titulo"), parseInt(this._routeParams.get("anio")));
                 };
                 CrearPeliculaComponent = __decorate([
                     core_1.Component({

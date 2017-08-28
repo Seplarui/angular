@@ -44,7 +44,7 @@ export class CrearPeliculaComponent implements OnInit {
             0,
             this._routeParams.get("titulo"),
             this._routeParams.get("titulo"),
-            this._routeParams.get("anio")
+            parseInt(this._routeParams.get("anio"))
         );
 
     }
