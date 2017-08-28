@@ -8,7 +8,9 @@ import { ROUTER_DIRECTIVES, RouteConfig, Router } from "angular2/router";
 
     selector: "peliculas-list",
     templateUrl: "/app/view/peliculas-list.html",
-    providers: [PeliculasService]
+    providers: [PeliculasService],
+    directives: [ROUTER_DIRECTIVES]
+
 })
 
 export class PeliculasListComponent {
