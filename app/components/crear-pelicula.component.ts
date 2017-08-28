@@ -15,6 +15,7 @@ import { ROUTER_DIRECTIVES, RouteConfig, Router, RouteParams } from "angular2/ro
 export class CrearPeliculaComponent implements OnInit {
 
     public TituloPelicula = "";
+    public nuevaPelicula: Pelicula;
 
 
     //METODO
@@ -24,9 +25,12 @@ export class CrearPeliculaComponent implements OnInit {
 
     }
 
-    onCrearPelicula(titulo, director, anio) {
-        let pelicula: Pelicula = new Pelicula(77, titulo, director, anio);
-        this._peliculasService.insertPelicula(pelicula);
+    onSubmit() {
+
+
+
+
+        this._peliculasService.insertPelicula(this.nuevaPelicula);
 
         this._router.navigate(["Peliculas"]);
 
@@ -36,6 +40,12 @@ export class CrearPeliculaComponent implements OnInit {
     ngOnInit(): any {
         
         this.TituloPelicula = this._routeParams.get("titulo");
+        this.nuevaPelicula=new Pelicula(
+            0,
+            this._routeParams.get("titulo"),
+            this._routeParams.get("titulo"),
+            this._routeParams.get("anio")
+        );
 
     }
 
